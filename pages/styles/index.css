@@ -4,7 +4,15 @@
     box-sizing: border-box;
 }
 
+body {
+    background: #a3fff192;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 h1 {
+    font-family: "Bitcount Grid Double", system-ui;
     width: 100%;
     text-align: center;
     padding: 20px 0 10px 0;
@@ -17,12 +25,26 @@ div {
 }
 
 div h4 {
+    font-family: "Edu VIC WA NT Hand", cursive;
     padding: 0 0 10px 0;
 }
 
+div ol li {
+    margin: 10px 0 0 40px;
+}
+
 div a {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     text-decoration: none;
     color: #252525;
     padding: 5px 0;
-    margin: 5px 0 0 10px;
+    margin: 5px 0 0 0;
+}
+
+.tipo-ejercicio {
+    background: #ffffffa0;
+    margin: 10px;
+    padding: 20px;
+    border-radius: 20px;
+    width: 80%;
 }
