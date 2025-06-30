@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/formulario.css">
+    <title>ejercicio_9</title>
+</head>
+<body>
+    <div class="container">
+        <h3>Pedir el tipo de cliente (Normal o VIP) y su gasto. Si es VIP y gastó más de 100, tiene 20% de descuento; si no, 10%. Al final aplicar el 15% del iva </h3>
+        <form action="../index.html">
+            <div class="inputs">
+
+                <label for="tipo">Ingrese "Normal" o "VIP":</label>
+                <input type="text" id="tipo" name="tipo" value="" placeholder="Normal o VIP" required>
+
+                <label for="monto">Ingrese el monto de la compra:</label>
+                <input type="number" id="monto" name="monto" value="" placeholder="Monto de la compra" required>
+
+            </div>
+            <div class="buttons">
+                <button type="button" onclick="tipoCliente()">ejecutar</button>
+                <button type="submit">regresar</button>
+            </div>
+        </form>
+    </div>
+    <div class="resultado">
+        <h3>Resultado:</h3>
+        <div id="salida"></div>
+    </div>
+</body>
+    <script src="javascript/ejercicio_9.js"></script>
+</html>

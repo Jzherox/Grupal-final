@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/formulario.css">
+    <title>Ejercicio 24 - Comparar textos</title>
+</head>
+<body>
+    <div class="container">
+        <h3>Ejercicio 24: ¿Qué texto tiene más letras?</h3>
+        <p>Ingresa dos textos y te diremos cuál es más largo.</p>
+        <form action="../index.html">
+            <div class="inputs">
+                <label for="texto1">Texto 1:</label>
+                <input type="text" id="texto1" placeholder="Ej. hola">
+
+                <label for="texto2">Texto 2:</label>
+                <input type="text" id="texto2" placeholder="Ej. mundo">
+            </div>
+            <div class="buttons">
+                <button type="button" onclick="compararTextos()">Ejecutar</button>
+                <button type="submit">Regresar</button>
+            </div>
+        </form>
+    </div>
+    <div class="resultado">
+        <h3>Resultado:</h3>
+        <div id="salida"></div>
+    </div>
+</body>
+    <script src="javascript/ejercicio_24.js"></script>
+</html>

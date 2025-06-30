@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/formulario.css">
+    <title>ejercicio_28</title>
+</head>
+<body>
+    <div class="container">
+        <h3> Comparar longitud de dos frases </h3>
+        <form action="../index.html">
+            <div class="inputs">
+                <label for="frase1">Primera frase:</label>
+                <input type="text" id="frase1" placeholder="Ej: Hola mundo">
+                
+                <label for="frase2">Segunda frase:</label>
+                <input type="text" id="frase2" placeholder="Ej: Buenas tardes">
+            </div>
+            <div class="buttons">
+                <button type="button" onclick="compararFrases()">Comparar</button>
+                <button type="submit">Regresar</button>
+            </div>
+        </form>
+    </div>
+    <div class="resultado">
+        <h3>Resultado:</h3>
+        <div id="salida"></div>
+    </div>
+</body>
+    <script src="javascript/ejercicio_28.js"></script>
+</html>

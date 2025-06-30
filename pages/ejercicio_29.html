@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/formulario.css">
+    <title>ejercicio_29</title>
+</head>
+<body>
+    <div class="container">
+        <h3>Contar cuántas veces aparece una letra específica.</h3>
+        <form action="../index.html">
+            <div class="inputs">
+
+                <label for="texto">Ingrese un texto:</label>
+                <textarea id="texto" name="texto" rows="4" cols="50" placeholder="Escriba su texto aquí..." required></textarea>
+
+                <label for="letra">Ingrese una letra:</label>
+                <input type="text" id="letra" name="letra" maxlength="1" required>
+                
+            </div>
+            <div class="buttons">
+                <button type="button" onclick="contarLetras()">ejecutar</button>
+                <button type="submit">regresar</button>
+            </div>
+        </form>
+    </div>
+    <div class="resultado">
+        <h3>Resultado:</h3>
+        <div id="salida"></div>
+    </div>
+</body>
+    <script src="javascript/ejercicio_29.js"></script>
+</html>

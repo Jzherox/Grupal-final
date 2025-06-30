@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/formulario.css">
+    <title>ejercicio_40</title>
+</head>
+<body>
+    <div class="container">
+        <h3>Dado dos arreglos de la misma cantidad de elementos sumarlos en un tercer arreglo y presentar ese nuevo arreglo</h3>
+        <form action="../index.html">
+            <div class="inputs">
+
+                <label for="arreglo1">Ingrese el primer arreglo (separado por comas):</label>
+                <input type="text" id="arreglo1" value="" placeholder="Ejemplo: 1,2,3" required>
+
+                <label for="arreglo2">Ingrese el segundo arreglo (separado por comas):</label>
+                <input type="text" id="arreglo2" value="" placeholder="Ejemplo: 4,5,6" required>
+
+            </div>
+            <div class="buttons">
+                <button type="button" onclick="sumarArreglos()">ejecutar</button>
+                <button type="submit">regresar</button>
+            </div>
+        </form>
+    </div>
+    <div class="resultado">
+        <h3>Resultado:</h3>
+        <div id="salida"></div>
+    </div>
+</body>
+    <script src="javascript/ejercicio_40.js"></script>
+</html>

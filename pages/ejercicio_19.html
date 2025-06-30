@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/formulario.css">
+    <title>ejercicio_19</title>
+</head>
+<body>
+    <div class="container">
+        <h3>Pedir números hasta que el usuario escriba un numero negativo y mostrar la suma total con while</h3>
+        <form action="../index.html">
+            <div class="inputs">
+
+                <label for="numero">Ingrese un número (negativo para terminar):</label>
+                <input type="number" id="numero" name="numero" value="" placeholder="Número" required>  
+               
+            </div>
+            <div class="buttons">
+                <button type="button" onclick="sumaNumeros()">ejecutar</button>
+                <button type="submit">regresar</button>
+            </div>
+        </form>
+    </div>
+    <div class="resultado">
+        <h3>Resultado:</h3>
+        <div id="salida"></div>
+    </div>
+</body>
+    <script src="javascript/ejercicio_19.js"></script>
+</html>

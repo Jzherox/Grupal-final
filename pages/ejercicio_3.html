@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/formulario.css">
+    <title>Ejercicio 3</title>
+</head>
+<body>
+    <div class="container">
+        <h3>Ejercicio 3 Básico</h3>
+        <p>Ingresa una nota y verifica el resultado.</p>
+        <form action="../index.html">
+            <div class="inputs">
+                <label for="entrada">Nota:</label>
+                <input type="number" id="entrada" min="0" max="10">
+            </div>
+            <div class="buttons">
+                <button type="button" onclick="funcion()">Ejecutar</button>
+                <button type="submit">Regresar</button>
+            </div>
+        </form>
+    </div>
+    <div class="resultado">
+        <h3>Resultado:</h3>
+        <div id="salida"></div>
+    </div>
+</body>
+    <script src="javascript/ejercicio_3.js"></script>
+</html>

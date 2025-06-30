@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/formulario.css">
+    <title>ejercicio_27</title>
+</head>
+<body>
+    <div class="container">
+        <h3> Verificar si una palabra es un palíndromo </h3>
+        <form action="../index.html">
+            <div class="inputs">
+                <label for="palabra">Ingrese una palabra:</label>
+                <input type="text" id="palabra" placeholder="Ej: reconocer">
+            </div>
+            <div class="buttons">
+                <button type="button" onclick="verificarPalindromo()">Verificar</button>
+                <button type="submit">Regresar</button>
+            </div>
+        </form>
+    </div>
+    <div class="resultado">
+        <h3>Resultado:</h3>
+        <div id="salida"></div>
+    </div>
+</body>
+    <script src="javascript/ejercicio_27.js"></script>
+</html>

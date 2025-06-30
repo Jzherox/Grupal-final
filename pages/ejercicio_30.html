@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/formulario.css">
+    <title>ejercicio_30</title>
+</head>
+<body>
+    <div class="container">
+        <h3>Dividir una oración en palabras y mostrarlas una por una.</h3>
+        <form action="../index.html">
+            <div class="inputs">
+
+                <label for="oracion">Ingrese una oración:</label>
+                <textarea id="oracion" name="oracion" rows="4" cols="50" placeholder="Escriba su oración aquí..." required></textarea>
+
+            </div>
+            <div class="buttons">
+                <button type="button" onclick="dividirOracion()">ejecutar</button>
+                <button type="submit">regresar</button>
+            </div>
+        </form>
+    </div>
+    <div class="resultado">
+        <h3>Resultado:</h3>
+        <div id="salida"></div>
+    </div>
+</body>
+    <script src="javascript/ejercicio_30.js"></script>
+</html>

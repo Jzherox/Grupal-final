@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/formulario.css">
+    <title>ejercicio_39</title>
+</head>
+<body>
+    <div class="container">
+        <h3>Copiar solo los pares de los elementos de un arreglo en otro arreglo</h3>
+        <form action="../index.html">
+            <div class="inputs">
+                <label for="arreglo">Ingrese un arreglo (separado por comas):</label>
+                <input type="text" id="arreglo" value="" placeholder="Ejemplo: 1,2,3,4,5,6" required>
+            </div>
+            <div class="buttons">
+                <button type="button" onclick="copiarPares()">ejecutar</button>
+                <button type="submit">regresar</button>
+            </div>
+        </form>
+    </div>
+    <div class="resultado">
+        <h3>Resultado:</h3>
+        <div id="salida"></div>
+    </div>
+</body>
+    <script src="javascript/ejercicio_39.js"></script>
+</html>

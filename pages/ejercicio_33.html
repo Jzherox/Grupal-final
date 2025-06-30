@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/formulario.css">
+    <title>Ejercicio 33 - Mayores de Edad</title>
+</head>
+<body>
+    <div class="container">
+        <h3>Ejercicio 33: Contar mayores de edad</h3>
+        <p>Ingresa edades separadas por comas (ej: 15,18,22,17).</p>
+        <form action="../index.html">
+            <div class="inputs">
+                <label for="entrada">Edades:</label>
+                <input type="text" id="entrada" placeholder="Ej. 12,25,30,17">
+            </div>
+            <div class="buttons">
+                <button type="button" onclick="contarMayoresEdad()">Ejecutar</button>
+                <button type="submit">Regresar</button>
+            </div>
+        </form>
+    </div>
+    <div class="resultado">
+        <h3>Resultado:</h3>
+        <div id="salida"></div>
+    </div>
+</body>
+    <script src="javascript/ejercicio_33.js"></script>
+</html>
