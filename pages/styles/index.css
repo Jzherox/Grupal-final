@@ -24,6 +24,12 @@ h1 {
     letter-spacing: 1px;
 }
 
+.descrip {
+    color: white;
+    padding: 20px 0;
+    font-size: 18px;
+}
+
 /* Contenedor principal */
 .container {
     max-width: 1200px;
@@ -286,4 +292,9 @@ h1 {
 
 .tipo-ejercicio ol::-webkit-scrollbar-thumb:hover {
     background: linear-gradient(135deg, #5a6fd8, #6a42a0);
+}
+
+.sobre-nosotros {
+    margin: 10px 0;
+    color: white;
 }
