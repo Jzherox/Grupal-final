@@ -1,3 +1,4 @@
+/* Reset y configuración base */
 * {
     margin: 0;
     padding: 0;
@@ -5,75 +6,238 @@
 }
 
 body {
-    padding: 20px 40px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    gap: 30px;
+}
+
+/* Contenedor principal del formulario */
+.container {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    width: 100%;
+    max-width: 400px;
 }
 
 .container h3 {
-    font-family: "Edu VIC WA NT Hand", cursive;
-    background: #a3fff192;
-    width: 100%;
+    color: #333;
+    margin-bottom: 25px;
     text-align: center;
-    padding: 20px 0;
-    margin-bottom: 10px;
-    border-radius: 20px;
+    font-size: 1.4em;
+    font-weight: 600;
 }
 
-.container {
-    padding: 0 0 20px 0;
+/* Estilos del formulario */
+form {
     display: flex;
     flex-direction: column;
+    gap: 20px;
 }
 
 .inputs {
     display: flex;
     flex-direction: column;
+    gap: 8px;
 }
 
 .inputs label {
-    font-weight: 100;
+    color: #555;
+    font-weight: 500;
+    font-size: 0.95em;
 }
 
 .inputs input {
-    width: 200px;
-    margin: 10px 0 20px;
+    padding: 12px 15px;
+    border: 2px solid #e1e5e9;
+    border-radius: 8px;
+    font-size: 1em;
+    transition: all 0.3s ease;
+    background: #fff;
 }
 
+.inputs input:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+    transform: translateY(-1px);
+}
+
+.inputs input:hover {
+    border-color: #a8b3f0;
+}
+
+/* Estilos de los botones */
 .buttons {
-    width: 100%;
     display: flex;
-    align-items: center;
-    justify-content: space-around;
+    gap: 15px;
+    margin-top: 10px;
 }
 
 .buttons button {
-    font-family: "Edu VIC WA NT Hand", cursive;
-    height: 60px;
-    width: 140px;
-    border-radius: 20px;
+    flex: 1;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
     text-transform: uppercase;
-    transition: all 0.5s;
+    letter-spacing: 0.5px;
 }
 
-.buttons button:hover {
-    font-size: 18px;
+.buttons button[type="button"] {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
 }
 
+.buttons button[type="button"]:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+}
+
+.buttons button[type="submit"] {
+    background: #6c757d;
+    color: white;
+}
+
+.buttons button[type="submit"]:hover {
+    background: #5a6268;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(108, 117, 125, 0.3);
+}
+
+.buttons button:active {
+    transform: translateY(0);
+}
+
+/* Contenedor de resultado - Estilo consola */
 .resultado {
-    background: #230d39;
+    background: #1e1e1e;
+    border-radius: 10px;
     padding: 20px;
-    color: #fff;
-    border-radius: 20px;
+    width: 100%;
+    max-width: 600px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+    border: 1px solid #333;
 }
 
-.resultado #salida {
-    display: flex;
-    flex-direction: column;
-    background: #252525;
-    height: 300px;
-    padding: 20px;
-    margin-top: 10px;
-    color: #fff;
-    font-family: monospace;
-    overflow-y: scroll;
-    line-height: 20px;
+.resultado h3 {
+    color: #00ff41;
+    margin-bottom: 15px;
+    font-family: 'Courier New', monospace;
+    font-size: 1.2em;
+    text-shadow: 0 0 10px rgba(0, 255, 65, 0.5);
+}
+
+/* Área de salida - Estilo terminal/consola */
+#salida {
+    background: #0d1117;
+    border: 1px solid #30363d;
+    border-radius: 6px;
+    padding: 15px;
+    min-height: 120px;
+    font-family: 'Courier New', 'Monaco', monospace;
+    font-size: 14px;
+    color: #c9d1d9;
+    line-height: 1.5;
+    overflow-x: auto;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    position: relative;
+}
+
+#salida:empty::before {
+    content: "Esperando resultado...";
+    color: #6e7681;
+    font-style: italic;
+}
+
+/* Efectos de texto en la consola */
+#salida::after {
+    content: "█";
+    color: #00ff41;
+    animation: blink 1s infinite;
+    margin-left: 2px;
+}
+
+@keyframes blink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0; }
+}
+
+/* Estilos para diferentes tipos de salida en consola */
+.success {
+    color: #28a745 !important;
+}
+
+.error {
+    color: #dc3545 !important;
+}
+
+.warning {
+    color: #ffc107 !important;
+}
+
+.info {
+    color: #17a2b8 !important;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    body {
+        padding: 15px;
+        gap: 20px;
+    }
+    
+    .container {
+        padding: 25px 20px;
+    }
+    
+    .buttons {
+        flex-direction: column;
+    }
+    
+    .buttons button {
+        width: 100%;
+    }
+    
+    .resultado {
+        padding: 15px;
+    }
+    
+    #salida {
+        min-height: 100px;
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container h3 {
+        font-size: 1.2em;
+    }
+    
+    .inputs input {
+        padding: 10px 12px;
+    }
+    
+    .buttons button {
+        padding: 10px 15px;
+        font-size: 0.9em;
+    }
+    
+    #salida {
+        font-size: 12px;
+        padding: 12px;
+    }
 }

@@ -75,4 +75,48 @@
         </ol>
     </div>
 </body>
+    <script>
+                // Funcionalidad de colapso/expansión para las secciones
+        document.addEventListener('DOMContentLoaded', function() {
+            // Obtener todas las secciones de ejercicios
+            const secciones = document.querySelectorAll('.tipo-ejercicio');
+            
+            // Agregar event listeners a cada sección
+            secciones.forEach(seccion => {
+                const header = seccion.querySelector('h4');
+                
+                // Inicialmente todas las secciones están colapsadas excepto la primera
+                if (seccion !== secciones[0]) {
+                    seccion.classList.add('collapsed');
+                }
+                
+                header.addEventListener('click', function() {
+                    // Toggle de la clase collapsed
+                    seccion.classList.toggle('collapsed');
+                    
+                    // Opcional: cerrar otras secciones (comportamiento acordeón)
+                    // Descomenta las siguientes líneas si quieres que solo una sección esté abierta a la vez
+                    /*
+                    secciones.forEach(otraSeccion => {
+                        if (otraSeccion !== seccion) {
+                            otraSeccion.classList.add('collapsed');
+                        }
+                    });
+                    */
+                });
+            });
+            
+            // Agregar efecto de hover a los enlaces
+            const enlaces = document.querySelectorAll('.tipo-ejercicio a');
+            enlaces.forEach(enlace => {
+                enlace.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateX(5px)';
+                });
+                
+                enlace.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateX(0)';
+                });
+            });
+        });
+    </script>
 </html>

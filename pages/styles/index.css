@@ -1,3 +1,4 @@
+/* Reset y configuración base */
 * {
     margin: 0;
     padding: 0;
@@ -5,46 +6,284 @@
 }
 
 body {
-    background: #a3fff192;
+    font-family: 'Edu VIC WA NT Hand', cursive;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 20px;
+    color: #333;
+}
+
+/* Título principal */
+h1 {
+    text-align: center;
+    color: white;
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+/* Contenedor principal */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+/* Estilos para cada tipo de ejercicio */
+.tipo-ejercicio {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+}
+
+.tipo-ejercicio:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* Header de cada sección */
+.tipo-ejercicio h4 {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    padding: 20px;
+    margin: 0;
+    font-size: 1.3rem;
+    font-weight: 600;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.3s ease;
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
 }
 
-h1 {
-    font-family: "Bitcount Grid Double", system-ui;
-    width: 100%;
-    text-align: center;
-    padding: 20px 0 10px 0;
+.tipo-ejercicio h4::after {
+    content: "▼";
+    font-size: 1rem;
+    transition: transform 0.3s ease;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-div {
-    padding: 0 0 20px 20px;
+.tipo-ejercicio h4:hover {
+    background: linear-gradient(135deg, #5a6fd8, #6a42a0);
+}
+
+/* Estado colapsado */
+.tipo-ejercicio.collapsed h4::after {
+    transform: rotate(-90deg);
+}
+
+/* Lista de ejercicios */
+.tipo-ejercicio ol {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    overflow: hidden;
+    transition: max-height 0.4s ease, opacity 0.3s ease;
+    max-height: 1000px;
+    opacity: 1;
+}
+
+.tipo-ejercicio.collapsed ol {
+    max-height: 0;
+    opacity: 0;
+}
+
+/* Items de la lista */
+.tipo-ejercicio li {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    position: relative;
+    counter-increment: exercise-counter;
+}
+
+.tipo-ejercicio li:last-child {
+    border-bottom: none;
+}
+
+.tipo-ejercicio li::before {
+    content: counter(exercise-counter, decimal-leading-zero);
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
     display: flex;
-    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    font-weight: bold;
+    font-family: 'Bitcount Grid Double', monospace;
+    box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3);
 }
 
-div h4 {
-    font-family: "Edu VIC WA NT Hand", cursive;
-    padding: 0 0 10px 0;
+/* Contador personalizado */
+.tipo-ejercicio {
+    counter-reset: exercise-counter;
 }
 
-div ol li {
-    margin: 10px 0 0 40px;
-}
-
-div a {
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+/* Enlaces */
+.tipo-ejercicio a {
+    display: block;
+    padding: 15px 20px 15px 65px;
     text-decoration: none;
-    color: #252525;
-    padding: 5px 0;
-    margin: 5px 0 0 0;
+    color: #333;
+    font-size: 1rem;
+    line-height: 1.4;
+    transition: all 0.3s ease;
+    position: relative;
+    font-weight: 500;
+}
+
+.tipo-ejercicio a:hover {
+    background: linear-gradient(90deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
+    color: #667eea;
+    padding-left: 75px;
+}
+
+.tipo-ejercicio a:hover::after {
+    content: "→";
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #667eea;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+/* Efectos de hover en los números */
+.tipo-ejercicio a:hover + li::before,
+.tipo-ejercicio li:hover::before {
+    transform: translateY(-50%) scale(1.1);
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+}
+
+/* Animación de entrada */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .tipo-ejercicio {
-    background: #ffffffa0;
-    margin: 10px;
-    padding: 20px;
-    border-radius: 20px;
-    width: 80%;
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+.tipo-ejercicio:nth-child(1) { animation-delay: 0.1s; }
+.tipo-ejercicio:nth-child(2) { animation-delay: 0.2s; }
+.tipo-ejercicio:nth-child(3) { animation-delay: 0.3s; }
+.tipo-ejercicio:nth-child(4) { animation-delay: 0.4s; }
+
+/* Responsive */
+@media (max-width: 768px) {
+    body {
+        padding: 15px;
+    }
+    
+    h1 {
+        font-size: 2rem;
+        margin-bottom: 30px;
+    }
+    
+    .container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .tipo-ejercicio h4 {
+        font-size: 1.1rem;
+        padding: 15px;
+    }
+    
+    .tipo-ejercicio a {
+        font-size: 0.9rem;
+        padding: 12px 15px 12px 55px;
+    }
+    
+    .tipo-ejercicio a:hover {
+        padding-left: 60px;
+    }
+    
+    .tipo-ejercicio li::before {
+        width: 25px;
+        height: 25px;
+        left: 15px;
+        font-size: 0.7rem;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.6rem;
+    }
+    
+    .tipo-ejercicio h4 {
+        font-size: 1rem;
+        padding: 12px;
+    }
+    
+    .tipo-ejercicio a {
+        font-size: 0.85rem;
+        padding: 10px 12px 10px 50px;
+        line-height: 1.3;
+    }
+    
+    .tipo-ejercicio li::before {
+        width: 22px;
+        height: 22px;
+        left: 12px;
+        font-size: 0.6rem;
+    }
+}
+
+/* Efectos adicionales */
+.tipo-ejercicio::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #667eea, #764ba2);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.tipo-ejercicio:hover::before {
+    opacity: 1;
+}
+
+/* Scrollbar personalizada */
+.tipo-ejercicio ol::-webkit-scrollbar {
+    width: 6px;
+}
+
+.tipo-ejercicio ol::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.tipo-ejercicio ol::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    border-radius: 3px;
+}
+
+.tipo-ejercicio ol::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(135deg, #5a6fd8, #6a42a0);
 }
