@@ -22,7 +22,7 @@ function tablaMultiplicarArreglo() {
     arreglo.forEach(num => {
         resultado += ` Tabla del ${num}:\n`;
         for (let i = 1; i <= 10; i++) {
-            resultado += `   ${num} × ${i} = ${num * i}\n`;
+            resultado += `${num} × ${i} = ${num * i}\n`;
         }
         resultado += `\n`;
     });

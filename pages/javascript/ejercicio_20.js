@@ -1,12 +1,20 @@
-function contarNumeros() {
-    debugger
-    let numero;
     let contador = 0;
+    let terminado = false;
 
-    while (numero !== 0) {
-        numero = parseFloat(prompt("Ingrese un número (0 para terminar):"));
+    function contarNumeros() {
+      if (terminado) return;
+
+      const input = document.getElementById("numero");
+      const numero = parseFloat(input.value);
+
+      if (isNaN(numero)) return;
+
+      if (numero === 0) {
+        terminado = true;
+        document.getElementById("salida").innerText = "Cantidad de números ingresados: " + contador;
+      } else {
         contador++;
+        input.value = "";
+        input.focus();
+      }
     }
-
-    document.getElementById("salida").innerText = "Cantidad de números ingresados: " + (contador - 1);
-}

@@ -1,12 +1,20 @@
-function sumaNumeros() {
-    debugger;
-    let numero = parseInt(document.getElementById("numero").value);
-    let suma = 0;
+let suma = 0;
+let terminado = false;
 
-    while (numero >= 0) {
+function agregarNumero() {
+    if (terminado) return;
+
+    const input = document.getElementById("numero");
+    const numero = parseFloat(input.value);
+
+    if (isNaN(numero)) return;
+
+    if (numero < 0) {
+        terminado = true;
+        document.getElementById("salida").innerText = "La suma total es: " + suma;
+    } else {
         suma += numero;
-        numero = parseFloat(prompt("Ingrese un número (negativo para terminar):"));
+        input.value = "";
+        input.focus();
     }
-
-    document.getElementById("salida").innerText = "La suma total es: " + suma;
 }

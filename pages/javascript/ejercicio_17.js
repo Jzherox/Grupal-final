@@ -1,15 +1,19 @@
+let contador = 0;
+let terminado = false;
+
 function pedirNombres() {
-    let contador = 0;
-    let nombre = "";
-    const salida = document.getElementById("salida");
+    const input = document.getElementById('nombre');
+    const nombre = input.value.trim();
+    const salida = document.getElementById('salida');
 
-    while (nombre !== "Messi") {
-        nombre = prompt("Ingrese un nombre (escriba 'Messi' para terminar):");
-        if (nombre !== null && nombre !== "Messi") {
-            contador++;
-        }
+    if (terminado) return;
+
+    if (nombre === "Messi") {
+        terminado = true;
+        salida.innerText = `📝 Ingresó ${contador} nombre(s) antes de escribir "Messi".`;
+    } else if (nombre !== "") {
+        contador++;
+        input.value = '';
+        input.focus();
     }
-
-    const mensaje = `📝 Ingresó ${contador} nombre(s) antes de escribir "Messi".`;
-    salida.innerText = mensaje;
 }

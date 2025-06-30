@@ -57,7 +57,7 @@ form {
     font-weight: 900;
 }
 
-.inputs input {
+.inputs input, textarea {
     padding: 12px 15px;
     border: 2px solid #e1e5e9;
     border-radius: 8px;
@@ -66,14 +66,14 @@ form {
     background: #fff;
 }
 
-.inputs input:focus {
+.inputs input:focus, textarea:focus {
     outline: none;
     border-color: #667eea;
     box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
     transform: translateY(-1px);
 }
 
-.inputs input:hover {
+.inputs input:hover, textarea:hover {
     border-color: #a8b3f0;
 }
 

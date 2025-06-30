@@ -10,7 +10,7 @@ function añadir() {
     resultado.innerHTML = ''
     const palabra = document.getElementById('elemento').value.trim()
     if (palabra == '') {
-        mostrar('Debes ingreasar una palabra.')
+        mostrar('Debes ingresar una palabra.')
         return
     } else {
         palabras.push(palabra)
