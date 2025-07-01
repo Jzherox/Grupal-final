@@ -47,10 +47,10 @@ function clasificar() {
     }
 
     mostrar(`<strong>** Clasificacion de libros **</strong>`)
-    mostrar(`Titulos de libros con mas de 20 caracters:`)
+    mostrar(`<br>Titulos de libros con mas de 20 caracters:`)
     mostrar(`${libros_clase1}`)
-    mostrar(`Titulos de libros con un caracter numerico al final:`)
+    mostrar(`<br>Titulos de libros con un caracter numerico al final:`)
     mostrar(`${libros_clase2}`)
-    mostrar(`Libros que no cumplen las condiciones anteriores:`)
+    mostrar(`<br>Libros que no cumplen las condiciones anteriores:`)
     mostrar(`${libros_clase3}`)
 } 
